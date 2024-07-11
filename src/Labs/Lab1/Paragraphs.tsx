@@ -18,7 +18,7 @@ export default function Paragraphs() {
             the right.</p>
         <p>
             This is the third paragraph. Wrap each paragraph with the paragraph
-            tag to tell browsers to render the gaps.</p>
-
+            tag to tell browsers to render the gaps.
+        </p>
     </div>);
 }
