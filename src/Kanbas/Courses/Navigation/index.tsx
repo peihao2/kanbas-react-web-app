@@ -1,34 +1,39 @@
-export default function KanbasNavigation() {
+export default function CoursesNavigation() {
     return (
-      <ul id="wd-kanbas-navigation">
+      <ul id="wd-courses-navigation">
         <li>
-          <a id="wd-account-link" href="#/Kanbas/Account">
-            Account
+          <a id="wd-course-home-link" href="#/Kanbas/Courses/1234/Home">
+            Home
           </a>
         </li>
         <li>
-          <a id="wd-dashboard-link" href="#/Kanbas/Dashboard">
-            Dashboard
+          <a id="wd-course-modules-link" href="#/Kanbas/Courses/1234/Modules">
+            Modules
           </a>
         </li>
         <li>
-          <a id="wd-course-link" href="#/Kanbas/Courses">
-            Courses
+          <a id="wd-course-piazza-link" href="#/Kanbas/Courses/1234/Piazza">
+            Piazza
           </a>
         </li>
         <li>
-          <a id="wd-calendar-link" href="#/Kanbas/Calendar">
-            Calendar
+          <a id="wd-course-zoom-link" href="#/Kanbas/Courses/1234/Zoom">
+            Zoom
           </a>
         </li>
         <li>
-          <a id="wd-inbox-link" href="#/Kanbas/Inbox">
-            Inbox
+          <a id="wd-course-quizzes-link" href="#/Kanbas/Courses/1234/Assignments">
+            Assignments
           </a>
         </li>
         <li>
-          <a id="wd-labs-link" href="#/Labs">
-            Labs
+          <a id="wd-course-assignments-link" href="#/Kanbas/Courses/1234/Quizzes">
+            Quizzes
+          </a>
+        </li>
+        <li>
+          <a id="wd-course-grades-link" href="#/Kanbas/Courses/1234/Grades">
+            Grades
           </a>
         </li>
       </ul>
