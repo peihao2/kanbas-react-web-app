@@ -4,13 +4,19 @@ export default function Float() {
             <h2>Float</h2>
             <div>
                 <div className="wd-float-left wd-dimension-portrait wd-bg-color-yellow">
-                    Yellow </div>
+                    Yellow
+                </div>
                 <div className="wd-float-left wd-dimension-portrait wd-bg-color-blue wd-fg-color-white">
-                    Blue </div>
+                    Blue
+                </div>
                 <div className="wd-float-left wd-dimension-portrait wd-bg-color-red">
-                    Red </div>
-                <img className="wd-float-right"
-                    src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg" />
+                    Red
+                </div>
+                <img
+                    className="wd-float-right"
+                    src="https://www.staradvertiser.com/wp-content/uploads/2021/08/web1_Starship-gap2.jpg"
+                    alt="Starship gap"
+                />
                 <div className="wd-float-done"></div>
             </div>
         </div>
