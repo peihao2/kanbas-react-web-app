@@ -13,7 +13,9 @@ export default function BootstrapNavigation() {
                     <a className="nav-link" href="/link2">Link</a>
                 </li>
                 <li className="nav-item">
-                    <a className="nav-link disabled" href="#" aria-disabled="true">Disabled</a>
+                    <button className="nav-link disabled" disabled>
+                        Disabled
+                    </button>
                 </li>
             </ul>
 
