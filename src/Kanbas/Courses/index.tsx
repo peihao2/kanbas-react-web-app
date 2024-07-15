@@ -4,19 +4,19 @@ import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
 import AssignmentEditor from "./Assignments/Editor";
+import { FaAlignJustify } from "react-icons/fa";
 
 export default function Courses() {
   return (
       <div id="wd-courses">
-        <h2>Course 1234</h2>
+        <h2  className="text-danger">
+        <FaAlignJustify className="me-4 fs-4 mb-1" />
+        Course 1234
+        </h2>
         <hr />
-        <table width="100%">
-          <tbody>
-          <tr>
-            <td valign="top">
-              <CoursesNavigation />
-            </td>
-            <td valign="top">
+        <div>
+        <CoursesNavigation />
+
               <Routes>
                 <Route path="/" element={<Navigate to="Home" />} />
                 <Route path="/Home" element={<Home />} />
@@ -28,10 +28,7 @@ export default function Courses() {
                 <Route path="/Quizzes" element={<h1>Quizzes</h1>} />
                 <Route path="/Grades" element={<h1>Grades</h1>} />
               </Routes>
-            </td>
-          </tr>
-          </tbody>
-        </table>
+              </div>
       </div>
   );
 }
