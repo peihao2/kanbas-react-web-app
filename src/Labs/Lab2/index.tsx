@@ -97,6 +97,9 @@ export default function Lab2() {
             <BootstrapForms />
             <BootstrapNavigation />
 
+            <h1 id="asd" className="zxc">I'm white on red</h1>
+
+
         </div>
     );
 }
