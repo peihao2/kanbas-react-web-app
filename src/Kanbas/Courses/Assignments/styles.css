@@ -76,11 +76,20 @@ button:hover {
     width: 100%;
 }
 
+.wd-assignment-icon {
+    color: green;
+    font-size: 20px;
+    margin-right: 10px;
+    position: relative;
+    top: 20px; 
+}
+
 .wd-assignment-link {
     font-size: 18px;
     font-weight: bold;
     color: #363636;
     text-decoration: none;
+    margin-right: auto;
 }
 
 .wd-assignment-link:hover {
@@ -91,6 +100,7 @@ button:hover {
     margin-top: 5px;
     font-size: 14px;
     color: #666;
+    margin-left: 30px;
 }
 
 .wd-multiple-modules {
@@ -101,4 +111,10 @@ button:hover {
 .wd-bold-text {
     font-weight: bold;
     color: black;
+}
+
+.wd-control-buttons {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
 }
