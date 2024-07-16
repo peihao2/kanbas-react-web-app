@@ -1,3 +1,4 @@
+import { VscNotebook } from "react-icons/vsc";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 
 export default function Assignments() {
@@ -12,10 +13,13 @@ export default function Assignments() {
             <ul id="wd-assignment-list">
                 <li className="wd-assignment-list-item">
                     <div className="wd-assignment-header">
+                        <VscNotebook className="wd-assignment-icon" />
                         <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/123">
                             A1
                         </a>
-                        <LessonControlButtons />
+                        <div className="wd-control-buttons">
+                            <LessonControlButtons />
+                        </div>
                     </div>
                     <div className="wd-assignment-details">
                         <span className="wd-multiple-modules">Multiple Modules</span> | <span className="wd-bold-text">Not available until</span> May 6 at 12:00am |
@@ -25,10 +29,13 @@ export default function Assignments() {
                 </li>
                 <li className="wd-assignment-list-item">
                     <div className="wd-assignment-header">
+                        <VscNotebook className="wd-assignment-icon" />
                         <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/124">
                             A2
                         </a>
-                        <LessonControlButtons />
+                        <div className="wd-control-buttons">
+                            <LessonControlButtons />
+                        </div>
                     </div>
                     <div className="wd-assignment-details">
                         <span className="wd-multiple-modules">Multiple Modules</span> | <span className="wd-bold-text">Not available until</span> May 13 at 12:00am |
@@ -38,10 +45,13 @@ export default function Assignments() {
                 </li>
                 <li className="wd-assignment-list-item">
                     <div className="wd-assignment-header">
+                        <VscNotebook className="wd-assignment-icon" />
                         <a className="wd-assignment-link" href="#/Kanbas/Courses/1234/Assignments/125">
                             A3
                         </a>
-                        <LessonControlButtons />
+                        <div className="wd-control-buttons">
+                            <LessonControlButtons />
+                        </div>
                     </div>
                     <div className="wd-assignment-details">
                         <span className="wd-multiple-modules">Multiple Modules</span> | <span className="wd-bold-text">Not available until</span> May 20 at 12:00am |
