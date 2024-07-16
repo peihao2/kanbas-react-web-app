@@ -6,14 +6,14 @@ export default function Grades() {
         <div className="container mt-4">
             <div className="row mb-3 align-items-center">
                 <div className="col-md-3">
-                    <label className="form-label">Student Names</label>
+                    <label className="form-label font-weight-bold">Student Names</label>
                     <div className="input-group">
                         <span className="input-group-text"><FaFilter /></span>
                         <input type="text" className="form-control" placeholder="Search Students" />
                     </div>
                 </div>
                 <div className="col-md-3">
-                    <label className="form-label">Assignment Names</label>
+                    <label className="form-label font-weight-bold">Assignment Names</label>
                     <div className="input-group">
                         <span className="input-group-text"><FaFilter /></span>
                         <input type="text" className="form-control" placeholder="Search Assignments" />
