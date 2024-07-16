@@ -2,7 +2,7 @@ import { MdDoNotDisturbAlt } from "react-icons/md";
 import { FaCheckCircle, FaHome, FaChartBar } from "react-icons/fa";
 import { BiImport } from "react-icons/bi";
 import { LiaFileImportSolid } from "react-icons/lia";
-import { AiOutlineNotification, AiOutlineBell } from "react-icons/ai";
+import {AiOutlineBell } from "react-icons/ai";
 import { MdAnnouncement } from "react-icons/md";
 
 export default function CourseStatus() {

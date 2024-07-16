@@ -7,17 +7,12 @@ export default function Dashboard() {
         <div className="row row-cols-1 row-cols-md-5 g-4">
           <div className="wd-dashboard-course col" style={{ width: "300px" }}>
             <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
+              <a className="wd-dashboard-course-link text-decoration-none text-dark" href="#/Kanbas/Courses/1234/Home">
+                <img src="/images/reactjs.jpg" width="100%" alt="React JS Course" />
                 <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <h5 className="wd-dashboard-course-title card-title">CS1234 React JS</h5>
+                  <p className="card-text">Full Stack software developer</p>
+                  <button className="btn btn-primary">Go</button>
                 </div>
               </a>
             </div>
@@ -25,17 +20,12 @@ export default function Dashboard() {
 
           <div className="wd-dashboard-course col" style={{ width: "300px" }}>
             <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
+              <a className="wd-dashboard-course-link text-decoration-none text-dark" href="#/Kanbas/Courses/1234/Home">
+                <img src="/images/reactjs.jpg" width="100%" alt="React JS Course" />
                 <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <h5 className="wd-dashboard-course-title card-title">CS1234 React JS</h5>
+                  <p className="card-text">Full Stack software developer</p>
+                  <button className="btn btn-primary">Go</button>
                 </div>
               </a>
             </div>
@@ -43,17 +33,12 @@ export default function Dashboard() {
 
           <div className="wd-dashboard-course col" style={{ width: "300px" }}>
             <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
+              <a className="wd-dashboard-course-link text-decoration-none text-dark" href="#/Kanbas/Courses/1234/Home">
+                <img src="/images/reactjs.jpg" width="100%" alt="React JS Course" />
                 <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <h5 className="wd-dashboard-course-title card-title">CS1234 React JS</h5>
+                  <p className="card-text">Full Stack software developer</p>
+                  <button className="btn btn-primary">Go</button>
                 </div>
               </a>
             </div>
@@ -61,17 +46,12 @@ export default function Dashboard() {
 
           <div className="wd-dashboard-course col" style={{ width: "300px" }}>
             <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
+              <a className="wd-dashboard-course-link text-decoration-none text-dark" href="#/Kanbas/Courses/1234/Home">
+                <img src="/images/reactjs.jpg" width="100%" alt="React JS Course" />
                 <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <h5 className="wd-dashboard-course-title card-title">CS1234 React JS</h5>
+                  <p className="card-text">Full Stack software developer</p>
+                  <button className="btn btn-primary">Go</button>
                 </div>
               </a>
             </div>
@@ -79,17 +59,12 @@ export default function Dashboard() {
 
           <div className="wd-dashboard-course col" style={{ width: "300px" }}>
             <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
+              <a className="wd-dashboard-course-link text-decoration-none text-dark" href="#/Kanbas/Courses/1234/Home">
+                <img src="/images/reactjs.jpg" width="100%" alt="React JS Course" />
                 <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <h5 className="wd-dashboard-course-title card-title">CS1234 React JS</h5>
+                  <p className="card-text">Full Stack software developer</p>
+                  <button className="btn btn-primary">Go</button>
                 </div>
               </a>
             </div>
@@ -97,42 +72,18 @@ export default function Dashboard() {
 
           <div className="wd-dashboard-course col" style={{ width: "300px" }}>
             <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
+              <a className="wd-dashboard-course-link text-decoration-none text-dark" href="#/Kanbas/Courses/1234/Home">
+                <img src="/images/reactjs.jpg" width="100%" alt="React JS Course" />
                 <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
+                  <h5 className="wd-dashboard-course-title card-title">CS1234 React JS</h5>
+                  <p className="card-text">Full Stack software developer</p>
+                  <button className="btn btn-primary">Go</button>
                 </div>
               </a>
             </div>
           </div>
-
-          <div className="wd-dashboard-course col" style={{ width: "300px" }}>
-            <div className="card">
-              <a className="wd-dashboard-course-link text-decoration-none text-dark"
-                href="#/Kanbas/Courses/1234/Home">
-                <img src="/images/reactjs.jpg" width="100%" />
-                <div className="card-body">
-                  <h5 className="wd-dashboard-course-title card-title">
-                    CS1234 React JS
-                  </h5>
-                  <p className="card-text">
-                    Full Stack software developer
-                  </p>
-                  <button className="btn btn-primary"> Go </button>
-                </div>
-              </a>
-            </div>
-          </div>
-          
-          
         </div>
-      </div></div>
+      </div>
+    </div>
   );
 }

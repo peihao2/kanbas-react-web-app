@@ -29,6 +29,15 @@ button:hover {
 #wd-assignments-title {
     font-size: 24px;
     margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wd-percentage {
+    font-size: 14px;
+    color: gray;
+    margin-left: 10px;
 }
 
 #wd-assignments-title button {
@@ -50,7 +59,21 @@ button:hover {
 
 .wd-assignment-list-item {
     border-bottom: 1px solid #ccc;
-    padding: 10px 0;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    border-left: 5px solid green;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.wd-assignment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 .wd-assignment-link {
@@ -64,18 +87,18 @@ button:hover {
     text-decoration: underline;
 }
 
-#wd-assignments-screen .list-group-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    border-left: 5px solid green; /* Green border on the left */
+.wd-assignment-details {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
 }
 
 .wd-multiple-modules {
-    color: rgb(210, 0, 0);
+    color: red;
+    font-weight: bold;
 }
 
 .wd-bold-text {
     font-weight: bold;
+    color: black;
 }
