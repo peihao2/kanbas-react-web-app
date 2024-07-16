@@ -9,10 +9,11 @@ export default function KanbasNavigation() {
         <div id="wd-kanbas-navigation" className="list-group rounded-0 position-fixed bottom-0 top-0 d-none d-md-block bg-black z-2"
             style={{ width: 120 }}>
 
-            <a id="wd-neu-link" target="_blank"
+            <a id="wd-neu-link" target="_blank" rel="noreferrer"
                 href="https://www.northeastern.edu/"
                 className="list-group-item bg-black border-0">
-                <img src="/images/NEU.png" width="75px" /> </a>
+                <img src="/images/NEU.png" width="75px" alt="Northeastern University" />
+            </a>
 
             <a id="wd-account-link" href="#/Kanbas/Account"
                 className="list-group-item text-white bg-black text-center border-0">
