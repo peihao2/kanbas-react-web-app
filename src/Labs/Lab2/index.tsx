@@ -1,3 +1,4 @@
+import Back from "./111";
 import BackgroundColors from "./BackgroundColors";
 import BootstrapForms from "./BootstrapForms";
 import BootstrapGrids from "./BootstrapGrids";
@@ -96,6 +97,7 @@ export default function Lab2() {
             <BootstrapLists />
             <BootstrapForms />
             <BootstrapNavigation />
+            <Back />
 
             <h1 id="asd" className="zxc">I'm white on red</h1>
 

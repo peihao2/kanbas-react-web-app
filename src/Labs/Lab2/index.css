@@ -277,3 +277,12 @@ p#wd-id-selector-2 {
 #asd { background-color: red }
 .zxc { background-color: blue; color: white }
 #zxc { background-color: blue }
+
+.padding {
+    border: 1px green solid;
+    border-top: 10px red solid;
+    border-left: 20px blue solid;
+    padding-left: 30px;
+    padding-top: 40px;
+    background-color: yellow;
+  }
