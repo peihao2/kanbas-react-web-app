@@ -2,13 +2,14 @@ import { useParams } from "react-router";
 import { VscNotebook } from "react-icons/vsc";
 import LessonControlButtons from "../Modules/LessonControlButtons";
 import { assignments } from "../../Database";
+import { Link } from "react-router-dom";
 
 export default function Assignments() {
     const { cid } = useParams();
-    console.log("Current Course ID:", cid); 
+    console.log("Current Course ID:", cid);
 
     const courseAssignments = assignments.filter((assignment) => assignment.course === cid);
-    console.log("Filtered Assignments:", courseAssignments); 
+    console.log("Filtered Assignments:", courseAssignments); // Debugging filtered assignments
 
     return (
         <div id="wd-assignments">
@@ -23,12 +24,16 @@ export default function Assignments() {
                     <li key={assignment._id} className="wd-assignment-list-item">
                         <div className="wd-assignment-header">
                             <VscNotebook className="wd-assignment-icon" />
-                            <a
+                            <Link to={`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
+                                className="custom-link">
+                                <h4 className="fw-bold">{assignment._id}: {assignment.title}</h4>
+                            </Link>
+                            {/* <a
                                 className="wd-assignment-link"
                                 href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
                             >
                                 {assignment.title}
-                            </a>
+                            </a> */}
                             <div className="wd-control-buttons">
                                 <LessonControlButtons />
                             </div>
