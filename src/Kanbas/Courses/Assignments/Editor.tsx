@@ -1,27 +1,55 @@
+import React, { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import { assignments } from '../../Database';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
+// Define the type for the assignment
+interface Assignment {
+    _id: string;
+    title: string;
+    description: string;
+    course: string;
+    points: number;
+    dueDate: string;
+    availableFrom: string;
+    availableUntil: string;
+}
+
 export default function AssignmentEditor() {
+    const { cid, aid } = useParams<{ cid: string; aid: string }>();
+    const [assignment, setAssignment] = useState<Assignment | null>(null);
+
+    useEffect(() => {
+        console.log("Fetching assignment with ID:", aid);
+        const fetchedAssignment = assignments.find(a => a._id === aid);
+        console.log("Fetched assignment:", fetchedAssignment);
+        if (fetchedAssignment) {
+            setAssignment(fetchedAssignment as Assignment);
+        } else {
+            console.log("Assignment not found");
+            setAssignment(null);
+        }
+    }, [aid]);
+
+    if (!assignment) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <div id="wd-assignments-editor" className="container mt-4">
             <label htmlFor="wd-name">Assignment Name</label>
-            <input id="wd-name" className="form-control" value="A1 - ENV + HTML" /><br /><br />
+            <input id="wd-name" className="form-control" value={assignment.title} readOnly /><br /><br />
             <label htmlFor="wd-description">Description</label>
-            <textarea id="wd-description" className="form-control">
-                The assignment is available online. Submit a link to the landing page of your Web application running on Netlify.
-                The landing page should include the following:
-                - Your full name and section
-                - Links to each of the lab assignments
-                - Link to the Kanbas application
-                - Links to all relevant source code repositories
-                The Kanbas application should include a link to navigate back to the landing page.
+            <textarea id="wd-description" className="form-control" readOnly>
+                {assignment.description}
             </textarea>
             <br />
             <div className="row">
                 <div className="col-md-6">
                     <div className="mb-3">
                         <label htmlFor="wd-points" className="form-label">Points</label>
-                        <input id="wd-points" type="number" className="form-control" value={100} />
+                        <input id="wd-points" type="number" className="form-control" value={assignment.points} readOnly />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="wd-assignment-group" className="form-label">Assignment Group</label>
@@ -73,25 +101,25 @@ export default function AssignmentEditor() {
                 <div className="col-md-6">
                     <div className="mb-3">
                         <label htmlFor="wd-assign-to" className="form-label">Assign to</label>
-                        <input id="wd-assign-to" className="form-control" value="Everyone" />
+                        <input id="wd-assign-to" className="form-control" value="Everyone" readOnly />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="wd-due" className="form-label">Due</label>
-                        <input id="wd-due" type="date" className="form-control" value="2024-05-13" />
+                        <input id="wd-due" type="date" className="form-control" value={assignment.dueDate} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="wd-available-from" className="form-label">Available from</label>
-                        <input id="wd-available-from" type="date" className="form-control" value="2024-05-06" />
+                        <input id="wd-available-from" type="date" className="form-control" value={assignment.availableFrom} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="wd-available-until" className="form-label">Until</label>
-                        <input id="wd-available-until" type="date" className="form-control" value="2024-05-20" />
+                        <input id="wd-available-until" type="date" className="form-control" value={assignment.availableUntil} />
                     </div>
                 </div>
             </div>
             <div className="mt-3">
-                <button className="btn btn-secondary">Cancel</button>
-                <button className="btn btn-danger">Save</button>
+                <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-secondary">Cancel</Link>
+                <Link to={`/Kanbas/Courses/${cid}/Assignments`} className="btn btn-danger">Save</Link>
             </div>
         </div>
     );
