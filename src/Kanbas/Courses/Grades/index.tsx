@@ -1,7 +1,19 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { users, enrollments, assignments, grades } from '../../Database';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaFilter, FaFileImport, FaFileExport, FaCog } from 'react-icons/fa';
 
 export default function Grades() {
+    const { cid } = useParams<{ cid: string }>();
+
+    const enrolledStudents = enrollments.filter(enrollment => enrollment.course === cid)
+        .map(enrollment => users.find(user => user._id === enrollment.user));
+
+    const courseAssignments = assignments.filter(assignment => assignment.course === cid);
+
+    const courseGrades = grades.filter(grade => courseAssignments.some(assignment => assignment._id === grade.assignment));
+
     return (
         <div className="container mt-4">
             <div className="row mb-3 align-items-center">
@@ -44,89 +56,28 @@ export default function Grades() {
             <div className="table-responsive">
                 <table className="table table-striped">
                     <thead>
-                    <tr>
-                        <th>Student Name</th>
-                        <th>A1 SETUP<br />Out of 100</th>
-                        <th>A2 HTML<br />Out of 100</th>
-                        <th>A3 CSS<br />Out of 100</th>
-                        <th>A4 BOOTSTRAP<br />Out of 100</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {grades.map((grade, index) => (
-                        <tr key={index}>
-                            <td className="text-danger">{grade.name}</td>
-                            {grade.scores.map((score, idx) => (
-                                <td key={idx} className={idx === 2 ? 'editable' : ''}>
-                                    {idx === 2 ? (
-                                        <input type="text" className="form-control" defaultValue={score.value} />
-                                    ) : (
-                                        score.value
-                                    )}
-                                </td>
+                        <tr>
+                            <th>Student Name</th>
+                            {courseAssignments.map((assignment, index) => (
+                                <th key={index}>{assignment.title}<br />Out of {assignment.points}</th>
                             ))}
                         </tr>
-                    ))}
+                    </thead>
+                    <tbody>
+                        {enrolledStudents.map((student, index) => (
+                            <tr key={index}>
+                                <td>{student?.firstName} {student?.lastName}</td>
+                                {courseAssignments.map((assignment, idx) => {
+                                    const grade = courseGrades.find(g => g.student === student?._id && g.assignment === assignment._id);
+                                    return (
+                                        <td key={idx}>{grade ? grade.grade : '-'}</td>
+                                    );
+                                })}
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
         </div>
     );
 }
-
-const grades = [
-    {
-        name: 'Jane Adams',
-        scores: [
-            { value: '100%', isEditable: false },
-            { value: '96.67%', isEditable: false },
-            { value: '92.18%', isEditable: true },
-            { value: '66.22%', isEditable: false },
-        ],
-    },
-    {
-        name: 'Christina Allen',
-        scores: [
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: true },
-            { value: '100%', isEditable: false },
-        ],
-    },
-    {
-        name: 'Samreen Ansari',
-        scores: [
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: true },
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: false },
-        ],
-    },
-    {
-        name: 'Han Bao',
-        scores: [
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: false },
-            { value: '88.03%', isEditable: true },
-            { value: '98.99%', isEditable: false },
-        ],
-    },
-    {
-        name: 'Mahi Sai Srinivas Bobbili',
-        scores: [
-            { value: '100%', isEditable: false },
-            { value: '96.67%', isEditable: false },
-            { value: '98.37%', isEditable: true },
-            { value: '100%', isEditable: false },
-        ],
-    },
-    {
-        name: 'Siran Cao',
-        scores: [
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: true },
-            { value: '100%', isEditable: false },
-            { value: '100%', isEditable: false },
-        ],
-    },
-];
