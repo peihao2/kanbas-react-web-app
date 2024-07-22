@@ -1,9 +1,11 @@
 import { AiOutlineDashboard } from "react-icons/ai";
-import { IoCalendarOutline } from "react-icons/io5";
+import { IoCalendarOutline, IoHelpCircleOutline } from "react-icons/io5";
 import { LiaBookSolid, LiaCogSolid } from "react-icons/lia";
-import { FaInbox, FaRegCircleUser } from "react-icons/fa6";
-import { ImLab } from "react-icons/im";
+import { FaInbox, FaLaptop, FaRegCircleUser } from "react-icons/fa6";
 import { Link, useLocation } from "react-router-dom";
+import { MdGroups2 } from "react-icons/md";
+import { LuHistory } from "react-icons/lu";
+
 
 
 export default function KanbasNavigation() {
@@ -11,8 +13,14 @@ export default function KanbasNavigation() {
     const links = [
         { label: "Dashboard", path: "/Kanbas/Dashboard", icon: AiOutlineDashboard },
         { label: "Courses", path: "/Kanbas/Courses", icon: LiaBookSolid },
+        { label: "Groups", path: "/Kanbas/Groups", icon: MdGroups2 },
+
         { label: "Calendar", path: "/Kanbas/Calendar", icon: IoCalendarOutline },
         { label: "Inbox", path: "/Kanbas/Inbox", icon: FaInbox },
+        { label: "History", path: "/Kanbas/History", icon: LuHistory },
+        { label: "Studio", path: "/Kanbas/Studio", icon: FaLaptop  },
+        { label: "Help", path: "/Kanbas/Help", icon: IoHelpCircleOutline  },
+
         { label: "Labs", path: "/Labs", icon: LiaCogSolid },
     ];
 
@@ -27,6 +35,7 @@ export default function KanbasNavigation() {
                 className="list-group-item bg-black border-0">
 
                 <img src="/images/NEU.png" width="75px" /></a>
+
             <Link key="/Kanbas/Account" to="/Kanbas/Account" className={`list-group-item text-center border-0 bg-black
 ${pathname.includes("Account") ? "bg-white text-danger" : "bg-black text-white"}`}>
                 <FaRegCircleUser className={`fs-1 ${pathname.includes("Account") ? "text-danger" : "text-white"}`} />
