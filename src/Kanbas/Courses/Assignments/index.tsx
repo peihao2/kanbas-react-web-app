@@ -1,50 +1,60 @@
+//import AssignmentControlButtons from "./AssignmentControlButtons";
+import { BsGripVertical } from "react-icons/bs";
+//import AssignmentControls from "./AssignmentControls";
+//import BannerControlButtons from "./BannerControlButtons";
+import { LuFileSignature } from "react-icons/lu";
+import { FaSearch } from "react-icons/fa";
 import { useParams } from "react-router";
-import { VscNotebook } from "react-icons/vsc";
-import LessonControlButtons from "../Modules/LessonControlButtons";
-import { assignments } from "../../Database";
-import { Link } from "react-router-dom";
+import * as db from "../../Database";
 
 export default function Assignments() {
     const { cid } = useParams();
-    console.log("Current Course ID:", cid);
-
-    const courseAssignments = assignments.filter((assignment) => assignment.course === cid);
-    console.log("Filtered Assignments:", courseAssignments); // Debugging filtered assignments
+    const assignments = db.assignments.filter(assignment => assignment.course === cid);
 
     return (
         <div id="wd-assignments">
-            <input id="wd-search-assignment" placeholder="Search for Assignments" />
-            <button id="wd-add-assignment-group">+ Group</button>
-            <button id="wd-add-assignment">+ Assignment</button>
-            <h3 id="wd-assignments-title">
-                ASSIGNMENTS <span className="wd-percentage">40% of Total</span> <button>+</button>
-            </h3>
-            <ul id="wd-assignment-list">
-                {courseAssignments.map((assignment) => (
-                    <li key={assignment._id} className="wd-assignment-list-item">
-                        <div className="wd-assignment-header">
-                            <VscNotebook className="wd-assignment-icon" />
-                            <Link to={`/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
-                                className="custom-link">
-                                <h4 className="fw-bold">{assignment._id}: {assignment.title}</h4>
-                            </Link>
-                            {/* <a
-                                className="wd-assignment-link"
-                                href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}
-                            >
-                                {assignment.title}
-                            </a> */}
-                            <div className="wd-control-buttons">
-                                <LessonControlButtons />
-                            </div>
+            <div className="header-row">
+                <div className="search-container">
+                    <FaSearch className="search-icon" />
+                    <input 
+                        id="wd-search-assignment"
+                        placeholder="Search..."
+                        className="search-input"
+                    />
+                </div>
+                {/* <AssignmentControls /> */}
+            </div>
+
+            <ul id="wd-assignment" className="list-group rounded-0">
+                <li className="wd-assignment list-group-item p-0 mb-5 fs-5 border-gray green-border-left">
+                    <div className="wd-title p-3 ps-2 bg-secondary d-flex align-items-center justify-content-between">
+                        <div className="d-flex align-items-center">
+                            <BsGripVertical className="me-2 fs-3" />
+                            ASSIGNMENTS
                         </div>
-                        <div className="wd-assignment-details">
-                            <span className="wd-multiple-modules">Multiple Modules</span> |{" "}
-                            <span className="wd-bold-text">Not available until</span> May 6 at 12:00am | <br />
-                            <span className="wd-bold-text">Due</span> May 13 at 11:59pm | 100 pts
-                        </div>
-                    </li>
-                ))}
+                        {/* <BannerControlButtons /> */}
+                    </div>
+
+                    <ul className="wd-assignment list-group rounded-0">
+                        {assignments.map(assignment => (
+                            <li key={assignment._id} className="wd-assignment list-group-item p-3 ps-1 d-flex align-items-center green-border-left">
+                                <BsGripVertical className="me-2 fs-3" />
+                                <LuFileSignature className="me-4 text-green" />
+                                <div className="flex-grow-1">
+                                    <a className="wd-assignment-link text-black no-underline" href={`#/Kanbas/Courses/${cid}/Assignments/${assignment._id}`}><b>{assignment.title}</b></a>
+                                    <br />
+                                    <span className="smaller-text">
+                                        <span className="text-red">Multiple Modules </span> 
+                                        | <b> Not available until</b> May 6 at 12:00am |
+                                        <br />
+                                        <b>Due</b> May 13 at 11:59pm | 100 pts
+                                    </span>
+                                </div>
+                                {/* <AssignmentControlButtons /> */}
+                            </li>
+                        ))}
+                    </ul>
+                </li>
             </ul>
         </div>
     );

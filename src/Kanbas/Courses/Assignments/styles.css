@@ -1,120 +1,83 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
-#wd-assignments {
-    padding: 20px;
-}
-
-#wd-search-assignment {
-    padding: 10px;
-    margin-right: 10px;
-    font-size: 16px;
-}
-
-button {
-    padding: 10px;
-    margin: 5px;
-    background-color: #c00;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #a00;
-}
-
-#wd-assignments-title {
-    font-size: 24px;
-    margin: 20px 0;
+.header-row {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
-.wd-percentage {
-    font-size: 14px;
-    color: gray;
-    margin-left: 10px;
-}
-
-#wd-assignments-title button {
-    background-color: transparent;
-    color: #000;
-    font-size: 24px;
-    border: none;
-    cursor: pointer;
-}
-
-#wd-assignments-title button:hover {
-    color: #c00;
-}
-
-#wd-assignment-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.wd-assignment-list-item {
-    border-bottom: 1px solid #ccc;
-    padding: 15px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    border-left: 5px solid green;
-    padding-left: 10px;
-    margin-bottom: 10px;
-}
-
-.wd-assignment-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.wd-assignment-icon {
-    color: green;
-    font-size: 20px;
-    margin-right: 10px;
+.search-container {
     position: relative;
-    top: 20px; 
-}
-
-.wd-assignment-link {
-    font-size: 18px;
-    font-weight: bold;
-    color: #363636;
-    text-decoration: none;
-    margin-right: auto;
-}
-
-.wd-assignment-link:hover {
-    text-decoration: underline;
-}
-
-.wd-assignment-details {
-    margin-top: 5px;
-    font-size: 14px;
-    color: #666;
-    margin-left: 30px;
-}
-
-.wd-multiple-modules {
-    color: red;
-    font-weight: bold;
-}
-
-.wd-bold-text {
-    font-weight: bold;
-    color: black;
-}
-
-.wd-control-buttons {
-    margin-left: auto;
     display: flex;
     align-items: center;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2em;
+    color: #888;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px 8px 30px; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.text-red {
+    color: red;
+} 
+
+.text-green {
+    color: green;
+} 
+
+.text-black {
+    color: black;
+} 
+
+.no-underline {
+    text-decoration: none;
+} 
+
+.green-border-left {
+    border-left: 5px solid green;
+}
+
+.smaller-text {
+    font-size: 0.9em; 
+}
+
+.oval-button {
+    border: 1px solid black;
+    background-color: transparent;
+    color: black;
+    padding: 5px 15px;
+    border-radius: 20px; 
+    font-size: 0.8em;
+    cursor: pointer;
+  }
+  
+  .oval-button:hover {
+    background-color: rgba(0, 0, 0, 0.1); 
+  }
+  
+  .btn-light {
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+
+  .container {
+    max-width: 800px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.wd-margin-bottom {
+    margin-bottom: 20px;
 }
