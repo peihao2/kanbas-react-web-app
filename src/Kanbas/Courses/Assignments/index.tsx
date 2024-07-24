@@ -1,7 +1,5 @@
-//import AssignmentControlButtons from "./AssignmentControlButtons";
 import { BsGripVertical } from "react-icons/bs";
-//import AssignmentControls from "./AssignmentControls";
-//import BannerControlButtons from "./BannerControlButtons";
+
 import { LuFileSignature } from "react-icons/lu";
 import { FaSearch } from "react-icons/fa";
 import { useParams } from "react-router";
@@ -22,7 +20,6 @@ export default function Assignments() {
                         className="search-input"
                     />
                 </div>
-                {/* <AssignmentControls /> */}
             </div>
 
             <ul id="wd-assignment" className="list-group rounded-0">
@@ -32,7 +29,6 @@ export default function Assignments() {
                             <BsGripVertical className="me-2 fs-3" />
                             ASSIGNMENTS
                         </div>
-                        {/* <BannerControlButtons /> */}
                     </div>
 
                     <ul className="wd-assignment list-group rounded-0">
@@ -50,7 +46,6 @@ export default function Assignments() {
                                         <b>Due</b> May 13 at 11:59pm | 100 pts
                                     </span>
                                 </div>
-                                {/* <AssignmentControlButtons /> */}
                             </li>
                         ))}
                     </ul>
