@@ -1,0 +1,12 @@
+.kanbas-container {
+  display: flex;
+}
+
+#wd-kanbas-navigation {
+  width: 120px;
+}
+
+.kanbas-content {
+  margin-left: 80px;
+  padding: 20px;
+}
