@@ -14,7 +14,7 @@ export default function Courses() {
   const { cid } = useParams();
   const course = courses.find((course) => course._id === cid);
   const { pathname } = useLocation();
-  
+
   return (
     <div id="wd-courses">
       <h2 className="text-danger">
@@ -23,27 +23,23 @@ export default function Courses() {
       </h2>
 
       <div className="d-flex">
-    <div className="d-none d-md-block">
-
-            <CoursesNavigation />
-            </div>
-    <div className="flex-fill">
-            <Routes>
-              <Route path="/" element={<Navigate to="Home" />} />
-              <Route path="Home" element={<Home/>} />
-              <Route path="Modules" element={<Modules/>} />
-              <Route path="Assignments"
-                     element={<Assignments/>} />
-              <Route path="Assignments/:id"
-                     element={<AssignmentEditor/>} />
-              <Route path="Grades" element={<Grades />} />     
-              {/* <Route path="Zoom" element={<Zoom />} /> 
+        <div className="d-none d-md-block">
+          <CoursesNavigation />
+        </div>
+        <div className="flex-fill">
+          <Routes>
+            <Route path="/" element={<Navigate to="Home" />} />
+            <Route path="Home" element={<Home />} />
+            <Route path="Modules" element={<Modules />} />
+            <Route path="Assignments" element={<Assignments />} />
+            <Route path="Assignments/:id" element={<AssignmentEditor />} />
+            <Route path="Grades" element={<Grades />} />
+            {/* <Route path="Zoom" element={<Zoom />} /> 
               <Route path="Piazza" element={<Piazza />} /> 
               <Route path="Quizzes" element={<Quizzes />} />    */}
-            </Routes>
-            </div>
-  </div>
-  </div>
-
-);
+          </Routes>
+        </div>
+      </div>
+    </div>
+  );
 }
