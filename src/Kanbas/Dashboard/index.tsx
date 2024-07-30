@@ -1,4 +1,6 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import * as db from "../Database";
 export default function Dashboard({
   courses,
   course,
@@ -11,11 +13,11 @@ export default function Dashboard({
   course: any;
   setCourse: (course: any) => void;
   addNewCourse: () => void;
-  deleteCourse: (courseId: string) => void;
+  deleteCourse: (course: any) => void;
   updateCourse: () => void;
 }) {
   return (
-    <div>
+    <div id="wd-dashboard">
       <h1 id="wd-dashboard-title">Dashboard</h1> <hr />
       <h5>
         New Course
@@ -46,23 +48,22 @@ export default function Dashboard({
         className="form-control"
         onChange={(e) => setCourse({ ...course, description: e.target.value })}
       />
-      <hr />
-      <hr />
-      <h2 id="wd-dashboard-published">
-        Published Courses ({courses.length})
-      </h2>{" "}
+      <h2 id="wd-dashboard-published">Published Courses ({courses.length})</h2>{" "}
       <hr />
       <div id="wd-dashboard-courses" className="row">
         <div className="row row-cols-1 row-cols-md-5 g-4">
           {courses.map((course) => (
-            <div className="wd-dashboard-course col" style={{ width: "300px" }}>
+            <div
+              key={course._id}
+              className="wd-dashboard-course col"
+              style={{ width: "260px", marginBottom: "30px" }}
+            >
               <Link
                 to={`/Kanbas/Courses/${course._id}/Home`}
                 className="text-decoration-none"
               >
                 <div className="card rounded-3 overflow-hidden">
-                  {" "}
-                  <img src="/images/reactjs.jpg" />
+                  <img src="/images/reactjs.jpg" height="{160}" />
                   <div className="card-body">
                     <span
                       className="wd-dashboard-course-link"
@@ -74,20 +75,20 @@ export default function Dashboard({
                     >
                       {course.name}
                     </span>
-
                     <p
                       className="wd-dashboard-course-title card-text"
                       style={{ maxHeight: 53, overflow: "hidden" }}
                     >
                       {course.description}
                     </p>
-                    <a
-                      href="#/Kanbas/Courses/1234/Home"
+
+                    <Link
+                      to={`/Kanbas/Courses/${course._id}/Home`}
                       className="btn btn-primary"
                     >
-                      {" "}
-                      Go{" "}
-                    </a>
+                      Go
+                    </Link>
+
                     <button
                       onClick={(event) => {
                         event.preventDefault();

@@ -1,125 +1,101 @@
 [
-    
-  
-  
-    {
-        "_id": "A101",
-        "title": "Propulsion Assignment",
-        "description": "Complete the propulsion system design.",
-        "course": "RS101",
-        "points": 100,
-        "dueDate": "2024-05-13",
-        "availableFrom": "2024-05-06",
-        "availableUntil": "2024-05-20"
-    },
-    {
-        "_id": "A102",
-        "title": "Combustion Analysis",
-        "description": "Analyze combustion processes and create a detailed report.",
-        "course": "RS101",
-        "points": 100,
-        "dueDate": "2024-05-20",
-        "availableFrom": "2024-05-13",
-        "availableUntil": "2024-05-27"
-    },
-    {
-        "_id": "A103",
-        "title": "Nozzle Design Project",
-        "description": "Design and test a rocket nozzle.",
-        "course": "RS101",
-        "points": 150,
-        "dueDate": "2024-06-01",
-        "availableFrom": "2024-05-20",
-        "availableUntil": "2024-06-10"
-    },
-    {
-        "_id": "A201",
-        "title": "Aerodynamics Quiz",
-        "description": "Test your knowledge on aerodynamics principles.",
-        "course": "RS102",
-        "points": 50,
-        "dueDate": "2024-05-15",
-        "availableFrom": "2024-05-08",
-        "availableUntil": "2024-05-22"
-    },
-    {
-        "_id": "A202",
-        "title": "Flow Analysis",
-        "description": "Perform a flow analysis of an airfoil.",
-        "course": "RS102",
-        "points": 100,
-        "dueDate": "2024-05-22",
-        "availableFrom": "2024-05-15",
-        "availableUntil": "2024-05-29"
-    },
-    {
-        "_id": "A203",
-        "title": "Heating Analysis",
-        "description": "Analyze heating effects on materials used in rocket design.",
-        "course": "RS102",
-        "points": 100,
-        "dueDate": "2024-06-05",
-        "availableFrom": "2024-05-22",
-        "availableUntil": "2024-06-12"
-    },
-    {
-        "_id": "A301",
-        "title": "Structural Design Task",
-        "description": "Design the structural components of a rocket.",
-        "course": "RS103",
-        "points": 200,
-        "dueDate": "2024-06-10",
-        "availableFrom": "2024-05-25",
-        "availableUntil": "2024-06-17"
-    },
-    {
-        "_id": "A302",
-        "title": "Orbital Calculations",
-        "description": "Calculate the orbital parameters for a satellite mission.",
-        "course": "RS103",
-        "points": 150,
-        "dueDate": "2024-06-20",
-        "availableFrom": "2024-06-01",
-        "availableUntil": "2024-06-27"
-    },
-    {
-        "_id": "A303",
-        "title": "Systems Engineering Exam",
-        "description": "Exam covering all topics in systems engineering.",
-        "course": "RS103",
-        "points": 100,
-        "dueDate": "2024-06-30",
-        "availableFrom": "2024-06-15",
-        "availableUntil": "2024-07-05"
-    },
-    {
-        "_id": "A401",
-        "title": "Advanced Propulsion Assignment",
-        "description": "Advanced study on propulsion systems.",
-        "course": "RS104",
-        "points": 100,
-        "dueDate": "2024-07-10",
-        "availableFrom": "2024-06-25",
-        "availableUntil": "2024-07-17"
-    },
-    {
-        "_id": "A402",
-        "title": "Advanced Combustion Analysis",
-        "description": "In-depth analysis of advanced combustion techniques.",
-        "course": "RS104",
-        "points": 100,
-        "dueDate": "2024-07-20",
-        "availableFrom": "2024-07-01",
-        "availableUntil": "2024-07-27"
-    },
-    {
-        "_id": "A403",
-        "title": "Rocket Design Project",
-        "description": "Comprehensive project on designing a rocket from scratch.",
-        "course": "RS104",
-        "points": 200,
-        "dueDate": "2024-07-30",
-        "availableFrom": "2024-07-10",
-        "availableUntil": "2024-08-10"
-    }
+  {
+    "_id": "A101",
+    "title": "Propulsion Assignment",
+    "description": "Design a propulsion system for a spacecraft.",
+    "course": "RS101",
+    "due": "2016-03-01",
+    "available": "2016-02-01",
+    "until": "2016-04-01",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A102",
+    "title": "Combustion Analysis",
+    "description": "Analyze the combustion process in a rocket engine.",
+    "course": "RS101",
+    "due": "2016-03-15",
+    "available": "2016-02-15",
+    "until": "2016-04-15",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A103",
+    "title": "Nozzle Design Project",
+    "description": "Design a nozzle for a rocket engine.",
+    "course": "RS101",
+    "due": "2016-04-01",
+    "available": "2016-03-01",
+    "until": "2016-05-01",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A201",
+    "title": "Aerodynamics Quiz",
+    "description": "Take a quiz on aerodynamics.",
+    "course": "RS102",
+    "due": "2016-03-01",
+    "available": "2016-02-01",
+    "until": "2016-04-01",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A202",
+    "title": "Flow Analysis",
+    "description": "Analyze the flow of air over an aircraft wing.",
+    "course": "RS102",
+    "due": "2016-03-15",
+    "available": "2016-02-15",
+    "until": "2016-04-15",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A203",
+    "title": "Heating Analysis",
+    "description": "Analyze the heating of a spacecraft during re-entry.",
+    "course": "RS102",
+    "due": "2016-04-01",
+    "available": "2016-03-01",
+    "until": "2016-05-01",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A301",
+    "title": "Structural Design Task",
+    "description": "Design the structure of a spacecraft.",
+    "course": "RS103",
+    "due": "2016-03-01",
+    "available": "2016-02-01",
+    "until": "2016-04-01",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A302",
+    "title": "Orbital Calculations",
+    "description": "Calculate the orbit of a spacecraft.",
+    "course": "RS103",
+    "due": "2016-03-15",
+    "available": "2016-02-15",
+    "until": "2016-04-15",
+    "points": 100,
+    "editing": false
+  },
+  {
+    "_id": "A303",
+    "title": "Systems Engineering Exam",
+    "description": "Take an exam on systems engineering.",
+    "course": "RS103",
+    "due": "2016-04-01",
+    "available": "2016-03-01",
+    "until": "2016-05-01",
+    "points": 100,
+    "editing": false
+  }
 ]
