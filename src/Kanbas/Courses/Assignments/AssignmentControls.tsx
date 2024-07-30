@@ -1,27 +1,26 @@
-import { FaPlus } from "react-icons/fa6";
+import React from "react";
 import { useNavigate } from "react-router-dom";
+import { FaPlus } from "react-icons/fa";
 
-export default function AssignmentControls() {
+export default function AssignmentControls({
+  assignmentTitle,
+  setAssignmentTitle,
+  addAssignment,
+}: {
+  assignmentTitle: string;
+  setAssignmentTitle: (title: string) => void;
+  addAssignment: () => void;
+}) {
   const navigate = useNavigate();
 
-  return (
-    <div id="wd-assignment-controls" className="mb-5 text-nowrap">
-      <button
-        id="wd-assignment-btn"
-        className="btn btn-lg btn-danger me-1 float-end"
-        onClick={() => navigate("newAssignment")}
-      >
-        <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
-        Assignment
-      </button>
+  const handleAddAssignment = () => {
+    navigate("Editor");
+  };
 
-      <button
-        id="wd-group"
-        className="btn btn-lg btn-secondary float-end wd-margin-right"
-        type="button"
-      >
-        <FaPlus className="position-relative me-2" style={{ bottom: "1px" }} />
-        Group
+  return (
+    <div>
+      <button className="btn btn-danger" onClick={handleAddAssignment}>
+        <FaPlus /> Assignment
       </button>
     </div>
   );
