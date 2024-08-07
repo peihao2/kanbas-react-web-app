@@ -1,12 +1,13 @@
 import "./Assignments.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store";
-import { addAssignment, updateAssignment } from "./reducer";
+import { addAssignment, updateAssignment, setAssignment } from "./reducer";
+import * as client from "./client";
 
 export default function AssignmentEditor() {
-  const { cid, id } = useParams();
+  const { cid, id } = useParams<{ cid: string; id: string }>();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -16,11 +17,20 @@ export default function AssignmentEditor() {
     )
   );
 
-  const dateObjectToHtmlDateString = (date: Date | null) => {
-    if (!date) return "";
-    return `${date.getFullYear()}-${date.getMonth() + 1 < 10 ? "0" : ""}${
-      date.getMonth() + 1
-    }-${date.getDate() < 10 ? "0" : ""}${date.getDate()}`;
+  useEffect(() => {
+    if (cid && !assignment) {
+      const fetchAssignments = async () => {
+        const fetchedAssignments = await client.fetchAssignments(cid);
+        dispatch(setAssignment(fetchedAssignments));
+      };
+      fetchAssignments();
+    }
+  }, [cid, assignment, dispatch]);
+
+  const dateObjectToHtmlDateString = (date: Date) => {
+    return `${date.getFullYear()}-${(date.getMonth() + 1)
+      .toString()
+      .padStart(2, "0")}-${date.getDate().toString().padStart(2, "0")}`;
   };
 
   const [assignmentDetails, setAssignmentDetails] = useState({
@@ -36,6 +46,19 @@ export default function AssignmentEditor() {
       : "",
   });
 
+  useEffect(() => {
+    if (assignment) {
+      setAssignmentDetails({
+        title: assignment.title,
+        description: assignment.description,
+        points: assignment.points,
+        due: dateObjectToHtmlDateString(new Date(assignment.due)),
+        available: dateObjectToHtmlDateString(new Date(assignment.available)),
+        until: dateObjectToHtmlDateString(new Date(assignment.until)),
+      });
+    }
+  }, [assignment]);
+
   const handleInputChange = (
     e: React.ChangeEvent<
       HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
@@ -45,35 +68,27 @@ export default function AssignmentEditor() {
     setAssignmentDetails({ ...assignmentDetails, [id]: value });
   };
 
-  const handleSave = () => {
-    const formatDate = (dateString: string) => {
-      return dateString ? new Date(dateString).toISOString() : null;
+  const handleSave = async () => {
+    const updatedAssignment = {
+      ...assignmentDetails,
+      due: new Date(assignmentDetails.due).toISOString(),
+      available: new Date(assignmentDetails.available).toISOString(),
+      until: new Date(assignmentDetails.until).toISOString(),
+      course: cid || "",
     };
 
-    const dueDate = formatDate(assignmentDetails.due);
-    const availableDate = formatDate(assignmentDetails.available);
-    const untilDate = formatDate(assignmentDetails.until);
-
     if (assignment) {
-      dispatch(
-        updateAssignment({
-          ...assignment,
-          ...assignmentDetails,
-          due: dueDate,
-          available: availableDate,
-          until: untilDate,
-        })
-      );
+      await client.updateAssignment({
+        ...updatedAssignment,
+        _id: assignment._id,
+      });
+      dispatch(updateAssignment({ ...updatedAssignment, _id: assignment._id }));
     } else {
-      dispatch(
-        addAssignment({
-          ...assignmentDetails,
-          course: cid,
-          due: dueDate,
-          available: availableDate,
-          until: untilDate,
-        })
+      const newAssignment = await client.createAssignment(
+        cid as string,
+        updatedAssignment
       );
+      dispatch(addAssignment(newAssignment));
     }
     navigate(`/Kanbas/Courses/${cid}/Assignments`);
   };
@@ -145,7 +160,7 @@ export default function AssignmentEditor() {
             Available from
           </label>
         </div>
-        <div className="col-md-4">
+        <div className="col-md-4 flex-grow-1">
           <input
             type="date"
             id="available"
