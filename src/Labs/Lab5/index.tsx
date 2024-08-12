@@ -1,4 +1,3 @@
-import EncodingParametersInURLs from "./EncodingParametersInURLs";
 import EnvironmentVariables from "./EnvironmentVariables";
 import HttpClient from "./HttpClient";
 import PathParameters from "./PathParameters";
@@ -20,7 +19,6 @@ export default function Lab5() {
         </a>
 
         <h2>Calculator</h2>
-        <EncodingParametersInURLs />
         <EnvironmentVariables />
         <PathParameters />
         <QueryParameters />
