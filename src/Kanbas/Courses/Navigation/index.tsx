@@ -2,7 +2,16 @@ import React from "react";
 import { useParams, useLocation } from "react-router-dom";
 import "./index.css";
 
-const links = ["Home", "Modules", "Piazza", "Zoom", "Assignments", "Quizzes", "Grades"];
+const links = [
+  "Home",
+  "Modules",
+  "Piazza",
+  "Zoom",
+  "Assignments",
+  "Quizzes",
+  "Grades",
+  "People",
+];
 
 export default function CoursesNavigation() {
   const { cid } = useParams();
@@ -18,7 +27,9 @@ export default function CoursesNavigation() {
             key={link}
             id={`wd-course-${link.toLowerCase()}-link`}
             href={path}
-            className={`list-group-item border border-0 ${isActive ? 'active' : 'text-danger'}`}
+            className={`list-group-item border border-0 ${
+              isActive ? "active" : "text-danger"
+            }`}
           >
             {link}
           </a>
